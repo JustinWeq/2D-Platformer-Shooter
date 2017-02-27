@@ -74,6 +74,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\DirectX11 SDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\DirectX11 SDK\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -142,6 +144,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseShader.h" />
+    <ClInclude Include="D3DInterface.h" />
+    <ClInclude Include="Form.h" />
+    <ClInclude Include="Instance.h" />
+    <ClInclude Include="InstanceChannelList.h" />
+    <ClInclude Include="Preprocessor.h" />
+    <ClInclude Include="Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseShader.cpp" />
+    <ClCompile Include="D3DInterface.cpp" />
+    <ClCompile Include="Form.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BaseVertexShader.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Textures.txt">
+      <DeploymentContent>true</DeploymentContent>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="D:\Graphics\Misc\TestSmile.png">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Image</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

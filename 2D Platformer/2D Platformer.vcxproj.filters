@@ -14,4 +14,59 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Form.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DInterface.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Preprocessor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseShader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InstanceChannelList.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instance.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BaseVertexShader.hlsl">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Textures.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="D:\Graphics\Misc\TestSmile.png">
+      <Filter>Source Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
