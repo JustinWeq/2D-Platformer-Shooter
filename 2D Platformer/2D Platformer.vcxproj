@@ -149,6 +149,7 @@
     <ClInclude Include="Form.h" />
     <ClInclude Include="Instance.h" />
     <ClInclude Include="InstanceChannelList.h" />
+    <ClInclude Include="InstanceList.h" />
     <ClInclude Include="Preprocessor.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>
@@ -156,6 +157,8 @@
     <ClCompile Include="BaseShader.cpp" />
     <ClCompile Include="D3DInterface.cpp" />
     <ClCompile Include="Form.cpp" />
+    <ClCompile Include="Instance.cpp" />
+    <ClCompile Include="InstanceChannelList.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Shader.cpp" />
   </ItemGroup>

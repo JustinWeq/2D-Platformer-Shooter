@@ -1,25 +1,37 @@
 #pragma once
 #include "BaseShader.h"
+#include <list>
 class Instance {
 public:
 
-	Instance(BaseShader::BaseShaderInstance instanceData, unsigned char instanceChannel, int instanceID);
+	struct InstanceNode
+	{
+		InstanceNode* left;
+		InstanceNode* right;
+		Instance* data;
 
-	void SetInstanceID(int instanceID);
+		InstanceNode(InstanceNode* left, InstanceNode* right, Instance* data);
+	};
+
+	Instance(BaseShader::BaseShaderInstance instanceData, unsigned char instanceChannel);
+
+	void SetLeftRightNodes(InstanceNode* left = NULL, InstanceNode* right = NULL);
+
+	InstanceNode* GetNode();
+
 
 	void SetInstanceData(float x, float y,float width,float height);
 
 	void SetInstanceData(BaseShader::BaseShaderInstance instanceData);
 
-	int GetInstanceID();
 
-	BaseShader GetInstanceData();
+	BaseShader::BaseShaderInstance* GetInstanceData();
 
 	unsigned char GetInstanceChannel();
 
 private:
 
-	BaseShader::BaseShaderInstance m_instanceData;
+	BaseShader::BaseShaderInstance* m_instanceData;
 	unsigned char m_instanceChannel;
-	int m_instanceID;
+	InstanceNode* m_node;
 };

@@ -12,7 +12,6 @@ public:
 		{
 			this->camX = camX;
 			this->camY = camY;
-
 		}
 	};
 
@@ -22,7 +21,13 @@ public:
 		float y;
 		float width;
 		float height;
-		BaseShaderInstance(float x, float y,float width,float height)
+		float uAdd;
+		float vAdd;
+		float uMultiply;
+		float vMultiply;
+
+		BaseShaderInstance(float x = 0, float y = 0,float width =0,float height = 0,float uAdd = 0,float vAdd = 0,
+			float uMultiply = 1,float vMultiply = 1)
 		{
 			this->x = x;
 			this->y = y;
@@ -30,11 +35,16 @@ public:
 			this->height = height;
 		}
 	};
+
+	 
+
 	BaseShader();
 
 	void updateConstantBuffer(D3DInterface* d3d,float camX, float camY);
 
 	void Render(D3DInterface* d3d);
+
+	void RenderInstance(D3DInterface* d3d, ID3D11Buffer* instanceBuffer, ID3D11ShaderResourceView* texture, int numberOfInstances);
 
 protected:
 
@@ -47,3 +57,5 @@ protected:
 	ID3D11ShaderResourceView* m_texture;
 	ID3D11SamplerState* m_sampler;
 };
+
+const BaseShader::BaseShaderInstance DEFUALT_INSTANCE = BaseShader::BaseShaderInstance(0,0,0,0);

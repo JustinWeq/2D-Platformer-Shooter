@@ -74,11 +74,55 @@ void BaseShader::Render(D3DInterface * d3d)
 
 	//set the shader resources
 	deviceContext->PSSetShaderResources(0, 1, &m_texture);
-
 	deviceContext->PSSetSamplers(0, 1,&m_sampler);
 
 	//draw the model quad
 	d3d->GetImmediateContext()->DrawIndexedInstanced(6, 2, 0,0,0);
+}
+
+void BaseShader::RenderInstance(D3DInterface * d3d, ID3D11Buffer * instanceBuffer, ID3D11ShaderResourceView * texture, int numberOfInstances)
+{
+	ID3D11Buffer* vertexBuffers[2];
+	ID3D11Buffer* indexBuffer = GetIndexBuffer();
+	unsigned int strides[2];
+	unsigned int offsets[2];
+	//set the data to be drawn
+	vertexBuffers[0] = GetVertexBuffer();
+	vertexBuffers[1] = instanceBuffer;
+
+	strides[0] = sizeof(Vertex);
+	strides[1] = sizeof(BaseShaderInstance);
+
+	offsets[0] = 0;
+	offsets[1] = 0;
+
+	ID3D11DeviceContext* deviceContext = d3d->GetImmediateContext();
+
+	//turn on alpha blending
+	d3d->EnableAlphaBlending();
+
+	//set primitive topology
+	d3d->GetImmediateContext()->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+
+
+	d3d->GetImmediateContext()->IASetIndexBuffer(indexBuffer, DXGI_FORMAT_R32_UINT, 0);
+
+
+	deviceContext->IASetVertexBuffers(0, 2, vertexBuffers, strides, offsets);
+	//set the input layout
+	d3d->GetImmediateContext()->IASetInputLayout(m_layout);
+
+	//set the vertex and pixel shader
+	d3d->GetImmediateContext()->VSSetShader(m_vertexShader, NULL, 0);
+	d3d->GetImmediateContext()->PSSetShader(m_pixelShader, NULL, 0);
+
+	//set the shader resources
+	deviceContext->PSSetShaderResources(0, 1, &texture);
+	deviceContext->PSSetSamplers(0, 1, &m_sampler);
+
+	//draw the model quad
+	d3d->GetImmediateContext()->DrawIndexedInstanced(6, numberOfInstances, 0, 0, 0);
 }
 
 void BaseShader::setUpInputLayout(D3DInterface * d3d)
@@ -92,7 +136,8 @@ void BaseShader::setUpInputLayout(D3DInterface * d3d)
 	ZeroMemory(&instanceBufferDesc, sizeof(instanceBufferDesc));
 	instanceBufferDesc.ByteWidth = sizeof(BaseShaderInstance) * 2;
 	instanceBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
+	instanceBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+	instanceBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 
 	//set up the data for the instance buffer
 	ZeroMemory(&instanceData, sizeof(D3D11_SUBRESOURCE_DATA));

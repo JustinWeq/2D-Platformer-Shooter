@@ -36,6 +36,9 @@
     <ClInclude Include="Instance.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="InstanceList.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Form.cpp">
@@ -51,6 +54,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BaseShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceChannelList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Instance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
