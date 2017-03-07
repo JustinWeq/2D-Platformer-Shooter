@@ -150,6 +150,7 @@
     <ClInclude Include="Instance.h" />
     <ClInclude Include="InstanceChannelList.h" />
     <ClInclude Include="InstanceList.h" />
+    <ClInclude Include="PlatformerInjector.h" />
     <ClInclude Include="Preprocessor.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>

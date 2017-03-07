@@ -13,60 +13,85 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{48f89012-4735-4287-a7b4-b198d390922b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dependency">
+      <UniqueIdentifier>{a712c0de-5f61-4966-85fe-c6d36299677e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gameplay">
+      <UniqueIdentifier>{d3867328-ae1c-4980-b736-45cb62d33bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Luancher">
+      <UniqueIdentifier>{f1e55907-40e2-418a-9f2f-583c54d61197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Windows">
+      <UniqueIdentifier>{1db4abcd-23b1-4134-98bb-32e2a608944f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Preprocessor">
+      <UniqueIdentifier>{25adcdd1-5348-4052-ac8b-926aae4ba8c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Interfaces">
+      <UniqueIdentifier>{23b179d6-33cf-4b0f-9f27-ac6134998f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Shaders">
+      <UniqueIdentifier>{3b9b3c6a-4f33-4a8c-8ed4-aa91de5127d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Instance">
+      <UniqueIdentifier>{8cd96f9b-d056-49dd-a637-c5a9e53d592f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PlatformerInjector.h">
+      <Filter>Source Files\Dependency</Filter>
+    </ClInclude>
     <ClInclude Include="Form.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="D3DInterface.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Windows</Filter>
     </ClInclude>
     <ClInclude Include="Preprocessor.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Preprocessor</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DInterface.h">
+      <Filter>Source Files\Graphics\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="BaseShader.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="InstanceChannelList.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Shader.h">
+      <Filter>Source Files\Graphics\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="Instance.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics\Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="InstanceChannelList.h">
+      <Filter>Source Files\Graphics\Instance</Filter>
     </ClInclude>
     <ClInclude Include="InstanceList.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics\Instance</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Form.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Luancher</Filter>
+    </ClCompile>
+    <ClCompile Include="Form.cpp">
+      <Filter>Source Files\Windows</Filter>
     </ClCompile>
     <ClCompile Include="D3DInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics\Interfaces</Filter>
     </ClCompile>
     <ClCompile Include="BaseShader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics\Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="InstanceChannelList.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Graphics\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="Instance.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics\Instance</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="BaseVertexShader.hlsl">
-      <Filter>Source Files</Filter>
-    </None>
+    <ClCompile Include="InstanceChannelList.cpp">
+      <Filter>Source Files\Graphics\Instance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Textures.txt">
@@ -77,5 +102,10 @@
     <Image Include="D:\Graphics\Misc\TestSmile.png">
       <Filter>Source Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BaseVertexShader.hlsl">
+      <Filter>Source Files\Graphics\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
