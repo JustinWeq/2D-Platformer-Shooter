@@ -147,7 +147,7 @@ void BaseShader::setUpInputLayout(D3DInterface * d3d)
 	d3d->GetDevice()->CreateBuffer(&instanceBufferDesc, &instanceData, &m_instanceBuffer);
 
 
-	D3D11_INPUT_ELEMENT_DESC polygonLayout[4];
+	D3D11_INPUT_ELEMENT_DESC polygonLayout[6];
 	HRESULT result;
 	polygonLayout[0].AlignedByteOffset = 0;
 	polygonLayout[0].Format = DXGI_FORMAT_R32G32_FLOAT;
@@ -182,9 +182,25 @@ void BaseShader::setUpInputLayout(D3DInterface * d3d)
 	polygonLayout[3].SemanticName = "POSITION";
 	polygonLayout[3].InputSlotClass = D3D11_INPUT_PER_INSTANCE_DATA;
 
+	polygonLayout[4].AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT;
+	polygonLayout[4].Format = DXGI_FORMAT_R32G32_FLOAT;
+	polygonLayout[4].InputSlot = 1;
+	polygonLayout[4].InstanceDataStepRate = 1;
+	polygonLayout[4].SemanticIndex = 1;
+	polygonLayout[4].SemanticName = "TEXCOORD";
+	polygonLayout[4].InputSlotClass = D3D11_INPUT_PER_INSTANCE_DATA;
+
+	polygonLayout[5].AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT;
+	polygonLayout[5].Format = DXGI_FORMAT_R32G32_FLOAT;
+	polygonLayout[5].InputSlot = 1;
+	polygonLayout[5].InstanceDataStepRate = 1;
+	polygonLayout[5].SemanticIndex = 2;
+	polygonLayout[5].SemanticName = "TEXCOORD";
+	polygonLayout[5].InputSlotClass = D3D11_INPUT_PER_INSTANCE_DATA;
+
 
 	//create the polygon layut
-	result = d3d->GetDevice()->CreateInputLayout(polygonLayout,4, m_vertexShaderBuffer->GetBufferPointer(), m_vertexShaderBuffer->GetBufferSize(), &m_layout);
+	result = d3d->GetDevice()->CreateInputLayout(polygonLayout,6, m_vertexShaderBuffer->GetBufferPointer(), m_vertexShaderBuffer->GetBufferSize(), &m_layout);
 	if (FAILED(result))
 	{
 		////SAFE_SET_STRING(m_errorMessage, "There was an error creating the vertex input layout");

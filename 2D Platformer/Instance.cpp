@@ -42,6 +42,10 @@ void Instance::SetInstanceData(BaseShader::BaseShaderInstance instanceData)
 	m_instanceData->height = instanceData.height;
 	m_instanceData->width = instanceData.width;
 	m_instanceData->y = instanceData.y;
+	m_instanceData->uAdd = instanceData.uAdd;
+	m_instanceData->vAdd = instanceData.vAdd;
+	m_instanceData->uMultiply = instanceData.uMultiply;
+	m_instanceData->vMultiply = instanceData.vMultiply;
 }
 
 

@@ -33,6 +33,10 @@ public:
 			this->y = y;
 			this->width = width;
 			this->height = height;
+			this->uAdd = uAdd;
+			this->vAdd = vAdd;
+			this->uMultiply = uMultiply;
+			this->vMultiply = vMultiply;
 		}
 	};
 

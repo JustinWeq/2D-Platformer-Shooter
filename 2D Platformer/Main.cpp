@@ -51,19 +51,19 @@ int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE prevHinstance, PSTR psCmdLine,
 		//draw the shader
 		//shader->Render(d3d);
 		if(instance)
-		instance->SetInstanceData( BaseShader::BaseShaderInstance(distance += 0.01, 0, 100, 100));
+		instance->SetInstanceData( BaseShader::BaseShaderInstance(distance += 0.01, 0, 100, 100,1,0,0,1));
 
 		//render the list
 		shader->RenderInstance(d3d, list.GetInstanceBuffer(d3d, 0), list.GetTexture(0), list.getListCount(0));
 
-		if (distance > 0.3 && instance)
-		{
-			//remove instace from the list
-			list.DeleteInstance(instance, 0);
-			delete instance;
-			instance = NULL;
-			
-		}
+		//if (distance > 0.3 && instance)
+		//{
+		//	//remove instace from the list
+		//	list.DeleteInstance(instance, 0);
+		//	delete instance;
+		//	instance = NULL;
+		//	
+		//}
 
 		//present
 		d3d->Present();
