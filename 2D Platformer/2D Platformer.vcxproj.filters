@@ -69,6 +69,9 @@
     <ClInclude Include="InstanceList.h">
       <Filter>Source Files\Graphics\Instance</Filter>
     </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Source Files\Gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -91,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="InstanceChannelList.cpp">
       <Filter>Source Files\Graphics\Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Source Files\Gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
